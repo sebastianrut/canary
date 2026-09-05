@@ -1214,7 +1214,7 @@ void Player::addSkillAdvance(skills_t skill, uint64_t count) {
 		if (skill == SKILL_LEVEL) {
 			sendTakeScreenshot(SCREENSHOT_TYPE_LEVELUP);
 		} else {
-			sendTakeScreenshot(SCREENSHOT_TYPE_SKILLUP, static_cast<uint8_t>(skill) + (skill == SKILL_DISTANCE ? 2 : (skill == SKILL_SHIELD ? 0 : 1)), skills[skill].level);
+			sendTakeScreenshot(SCREENSHOT_TYPE_SKILLUP, static_cast<uint8_t>(skill == SKILL_FIST ? 5 : skill == SKILL_CLUB ? 3 : skill == SKILL_SWORD ? 2 : skill == SKILL_AXE ? 4 : skill == SKILL_DISTANCE ? 6 : skill == SKILL_SHIELD ? 7 : 8), skills[skill].level);
 		}
 
 		g_creatureEvents().playerAdvance(static_self_cast<Player>(), skill, (skills[skill].level - 1), skills[skill].level);
@@ -8235,7 +8235,7 @@ bool Player::addOfflineTrainingTries(skills_t skill, uint64_t tries) {
 			if (skill == SKILL_LEVEL) {
 				sendTakeScreenshot(SCREENSHOT_TYPE_LEVELUP);
 			} else {
-				sendTakeScreenshot(SCREENSHOT_TYPE_SKILLUP, static_cast<uint8_t>(skill) + (skill == SKILL_DISTANCE ? 2 : (skill == SKILL_SHIELD ? 0 : 1)), skills[skill].level);
+				sendTakeScreenshot(SCREENSHOT_TYPE_SKILLUP, static_cast<uint8_t>(skill == SKILL_FIST ? 5 : skill == SKILL_CLUB ? 3 : skill == SKILL_SWORD ? 2 : skill == SKILL_AXE ? 4 : skill == SKILL_DISTANCE ? 6 : skill == SKILL_SHIELD ? 7 : 8), skills[skill].level);
 			}
 		}
 
