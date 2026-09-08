@@ -8237,7 +8237,7 @@ bool Player::addOfflineTrainingTries(skills_t skill, uint64_t tries) {
 				sendTakeScreenshot(SCREENSHOT_TYPE_LEVELUP);
 			} else {
 				static constexpr uint8_t screenshotSkillIds[] = { 5, 3, 2, 4, 6, 7, 8, 1 };
-			sendTakeScreenshot(SCREENSHOT_TYPE_SKILLUP, screenshotSkillIds[skill], skills[skill].level);
+				sendTakeScreenshot(SCREENSHOT_TYPE_SKILLUP, screenshotSkillIds[skill], skills[skill].level);
 			}
 		}
 
